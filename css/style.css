@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
+:root {
+  --primaryColor: #047aed;
+  --white: #fff;
+  --base-textColor: #333;
+  --maxWidth: 1100px;
+  --showcaseHeight: 400px;
+  --fontSize_H1: 40px;
+  --borderRadius-card: 10px;
+  --boxShadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  --borderBottom: #b4becb;
+}
+
 /* Base Styles */
 * {
   box-sizing: border-box;
@@ -9,7 +21,7 @@
 
 body {
   font-family: "Lato", "Helvetica Neue", sans-serif;
-  color: #333;
+  color: var(--base-textColor);
   line-height: 1.6;
 }
 
@@ -19,7 +31,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--base-textColor);
 }
 
 h1,
@@ -39,8 +51,8 @@ images {
 
 /* Navbar */
 .navbar {
-  background-color: #047aed;
-  color: #fff;
+  background-color: var(--primaryColor);
+  color: var(--white);
   height: 70px;
 }
 
@@ -49,31 +61,90 @@ images {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--white);
   padding: 10px;
   margin: 0 5px;
 }
 
 .navbar a:hover {
-  border-bottom: 2px #fff solid;
+  border-bottom: 2px var(--white) solid;
 }
 
 .navbar .flex {
   justify-content: space-between;
 }
 
-/* Container */
+/* Showcase */
+.showcase {
+  height: var(--showcaseHeight);
+  background-color: var(--primaryColor);
+  color: var(--white);
+  position: relative;
+}
+.showcase h1 {
+  font-size: var(--fontSize_H1);
+}
+.showcase p {
+  margin: 20px 0;
+}
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+}
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  justify-self: flex-end;
+}
+.showcase-form .form-control {
+  margin: 30px 0;
+}
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  border: 0;
+  border-bottom: 1px solid var(--borderBottom);
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+.showcase-form input:focus {
+  outline: none;
+}
+
+/* Utilities - classes that are throughout the site */
 .container {
-  max-width: 1100px;
+  max-width: var(--maxWidth);
   margin: 0 auto;
   overflow: auto;
   padding: 0 40px;
 }
 
-/* Utility Classes */
+.card {
+  background-color: var(--white);
+  color: var(--base-textColor);
+  border-radius: var(--borderRadius-card);
+  box-shadow: var(--boxShadow);
+  padding: 20px;
+  margin: 10px;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
   align-items: center;
   height: 100%;
 }
