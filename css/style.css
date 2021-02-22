@@ -2,6 +2,10 @@
 
 :root {
   --primaryColor: #047aed;
+  /* --primaryColor: #9eaa03; */
+  --secondaryColor: #1c3fa8;
+  --darkColor: #002240;
+  --lightColor: #f4f4f4;
   --white: #fff;
   --base-textColor: #333;
   --maxWidth: 1100px;
@@ -159,4 +163,9 @@ img {
 .cli .grid > *:first-child {
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
+}
+
+/* Cloud section */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
 }
